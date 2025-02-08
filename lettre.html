@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:)</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 10px;
+        }
+        .card {
+            position: relative;
+            width: 90%;
+            max-width: 300px;
+            height: 200px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            transition: transform 1s ease-in-out;
+        }
+        .card:active .card-inner,
+        .card.open .card-inner {
+            transform: rotateX(180deg);
+        }
+        .card-front, .card-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .card-front {
+            background-color: #ff6666;
+            color: white;
+        }
+        .card-back {
+            background-color: white;
+            color: black;
+            transform: rotateX(180deg);
+            padding: 100px;
+            font-size: 16px;
+            line-height: 1.4;
+            word-wrap: break-word;
+        }
+        @media (max-width: 400px) {
+            .card {
+                height: 300px;
+            }
+            .card-front, .card-back {
+                font-size: 16px;
+                padding: 10px;
+            }
+            .card-back {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card" onclick="this.classList.toggle('open')">
+        <div class="card-inner">
+            <div class="card-front">Clique pour ouvrir ❤️</div>
+            <div class="card-back">
+                Je t'aime Mathilde, tu es la plus belle chose qui me soit arrivée. Avec toi, je suis en paix, je me sens bien et serein. Tu me rends tellement heureux. Ne doute jamais de toi car il y aura toujours quelqu'un qui t'aime et qui t'aimera, et ce quelqu'un, c'est moi. Tu es la définition de l'Amour et je souris simplement à l'idée de pouvoir t'aimer encore. Joyeuse Saint-Valentin mon cœur, Je t'aime, gros bisous, Ton Charles 💖
+            </div>
+        </div>
+    </div>
+</body>
+</html>
